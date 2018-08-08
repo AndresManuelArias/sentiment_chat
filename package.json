@@ -1,0 +1,15 @@
+{
+  "name": "sentiment_chat",
+  "version": "1.0.0",
+  "description": "El objetivo de este programa es ver la relacion que existe entre las emociones interpretadas en un chat y el rendimiento en el trabajo de cada persona",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "emocion",
+    "trabajo"
+  ],
+  "author": "Andres Manuel Arias Ariza",
+  "license": "ISC"
+}

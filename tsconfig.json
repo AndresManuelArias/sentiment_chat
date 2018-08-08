@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "lib": ["es6","es7", "dom", "es2017"],
+        "sourceMap": true,
+        "watch": true,
+        "outDir": "logicjs",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/@types/node",
+            "./node_modules/@types/es6-collections"
+        ]
+    },
+    "files": [
+        "logic/persona.ts" // Aquí añado un archivo estático también a compilar
+    ],
+    "include": [
+        "logic/**/*.ts", // Con esta línea pude compilar todos los archivos ts dentro de las subcarpetas de core
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
+
+/*
+https://es.stackoverflow.com/questions/66212/como-puedo-compilar-varios-archivos-typescript-en-un-directorio?rq=1
+*/
