@@ -1,4 +1,4 @@
-const OrganizarDialogos = require('./organizarDialogos');
+const OrganizarDialogos = require('./OrganizarDialogos');
 let organizarDialogos = new OrganizarDialogos.OrganizarDialogos('fecha');
 export class DiasMensajes {
     public diasDelAnio:any;

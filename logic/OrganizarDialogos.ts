@@ -1,19 +1,34 @@
 
+
+interface EmocionPorDia {
+    fecha:Date
+    usuario:string
+    dialogo:string
+    idSecuenciaDialogo:number
+    puntajeEmocion:string
+}
+interface EstruturaDialogos {
+    dialogoPorDias:string[]
+    dialogos: string
+}
 export class OrganizarDialogos {
     private criterioPropiedad:string;
     constructor(criterioPropiedad1){
         this.criterioPropiedad = criterioPropiedad1;
     }
     public generarDialogos(mensajesDescompuestos:any[],nombres:any[]):any{
-        let criterioDialogo = {};
+        let criterioDialogo:any = {};
         // console.log('nombres',nombres)
         nombres.forEach((nombre)=>{
             // console.log('nombre',nombre);
-            criterioDialogo[nombre] = {};
+            let estruturaDialogos:EstruturaDialogos ={dialogoPorDias:[""],dialogos:""}
+            criterioDialogo[nombre] = estruturaDialogos;
             criterioDialogo[nombre]['dialogoPorDias'] = mensajesDescompuestos.filter(dialogo=> {
                 // console.log('dialogo',dialogo);
                 // console.log('this.criterioPropiedad',this.criterioPropiedad);
-                return nombre == dialogo[this.criterioPropiedad]});           
+                return nombre == dialogo[this.criterioPropiedad]
+            }); 
+            criterioDialogo[nombre]['dialogos'] = "";
             criterioDialogo[nombre]['dialogoPorDias'].forEach((dialogue)=>{
                 criterioDialogo[nombre]['dialogos'] +=   dialogue.dialogo+". ";
             });
