@@ -1,11 +1,11 @@
 'use strict';
 const fs = require('fs'), GenerarDialogos = require('./GenerarDialogos'), UsuariosMensajes = require('./UsuariosMensajes'), DiasMensajes = require('./DiasMensajes'), ReadWordAnalitiyEmotion = require('./ReadWordAnalitiyEmotion'), AnaliticTrabajoEmotion = require('./AnaliticTrabajoEmotion');
-let archivo = fs.readFileSync('../base_data/WhatsApp Chat with CENSO DANE grupo #6 Loc 8.txt', 'utf-8');
-let dialogosGenerados = new GenerarDialogos.GenerarDialogos(archivo, 'MM/DD/YY, HH:mm', /\n[1-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]?, [0-9][0-9]:[0-9][0-9] - /g);
+let archivo = fs.readFileSync('../base_data/Chat de WhatsApp con Ingeniería Zemla.txt', 'utf-8');
+let dialogosGenerados = new GenerarDialogos.GenerarDialogos(archivo, 'M/D/YY HH:mm: A', /\n[0-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]? [0-9][0-9]:[0-9][0-9] (PM|AM) - /g); // (\n[1-9][0-9]?\/[0-9][0-9]?\/[0-9][0-9]?, [0-9][0-9]:[0-9][0-9] - ) (MM/DD/YY, HH:mm) dentro de los dos parentesis se ve como debe ser el formato para poder sacar los datos del txt, el primer parentesis muestra la expresion regular de como esta escrita la fecha y que comienza en los saltos de linea, de esta manera se puede extraer el dialogo /\nformatofecha - /g
 let usuariosMensajes = new UsuariosMensajes.UsuariosMensajes(dialogosGenerados.mostrarDialogos());
 let diasMensajes = new DiasMensajes.DiasMensajes(dialogosGenerados.mostrarDialogos());
 let readWordAnalitiyEmotion = new ReadWordAnalitiyEmotion.ReadWordAnalitiyEmotion(usuariosMensajes.nombresUsuarios, diasMensajes.diasDelAnio);
-let analiticTrabajoEmotion = new AnaliticTrabajoEmotion.AnaliticTrabajoEmotion({ delimiter: ',', encoding: 'utf8', log: true, objName: false, parse: true, stream: false }, '../base_data/Formatos DANE- CENSO 2018 - GRUPO 6  - analitica.csv', readWordAnalitiyEmotion.mostrarEmotionDate(), 'DD/MM/YYYY');
+let analiticTrabajoEmotion = new AnaliticTrabajoEmotion.AnaliticTrabajoEmotion({ delimiter: ',', encoding: 'utf8', log: true, objName: false, parse: true, stream: false }, '../base_data/trabajo Diario realizado analitica.csv', readWordAnalitiyEmotion.mostrarEmotionDate(), 'DD/MM/YYYY');
 [
     { name: 'mensajesPorDias.json', text: JSON.stringify(diasMensajes.diasDelAnio) },
     { name: 'nombreUsuarios.json', text: JSON.stringify(usuariosMensajes.nombresUsuarios) },
