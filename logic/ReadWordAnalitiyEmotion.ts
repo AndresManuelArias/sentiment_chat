@@ -8,25 +8,8 @@ interface EmotionDate{
     scorePersons:ScorePerson[],
     date:string
 }
-class SentimentLenguajeNatural{
-    private natural:any
-    private Analyzer:any
-    private stemmer:any  
-    private analyzer:any
-    private tokenizer:any
-    constructor(){
-        this.natural = require('natural');
-        this.Analyzer = this.natural.SentimentAnalyzer;
-        this.stemmer = this.natural.PorterStemmer;
-        this.analyzer = new this.Analyzer("Spanish", this.stemmer, "afinn");
-        this.tokenizer = new this.natural.WordTokenizer();
-    }
-    public calificacionLenguajeNatural(palabras:string):number{ 
-        let words = this.tokenizer.tokenize(palabras);
-        return this.analyzer.getSentiment(words);
-    }
-}
-const sentimentLenguajeNatural = new SentimentLenguajeNatural();
+const SentimentLenguajeNatural  = require('./SentimentLenguajeNatural');
+const sentimentLenguajeNatural = new SentimentLenguajeNatural.SentimentLenguajeNatural();
 
 export class ReadWordAnalitiyEmotion{
     private nombreUsuarios:any

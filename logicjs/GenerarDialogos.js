@@ -3,8 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fechaFormat = require("fecha");
 class GenerarDialogos {
     constructor(dialogos, formatDAte, expresionSeparadorDialogoDate) {
-        let dialogoUsuarios = this.generarArrayDeDialogos(dialogos, expresionSeparadorDialogoDate);
-        this.dialogoUsuarios = dialogoUsuarios.filter(this.quitarLosqueNotienenUsuario).map((dialogo, index) => this.descomponerDialogo(dialogo, formatDAte, index));
+        let unionDialogo;
+        dialogos.forEach(dialogo => {
+            unionDialogo += dialogo;
+        });
+        let dialogoUsuarios = this.generarArrayDeDialogos(unionDialogo, expresionSeparadorDialogoDate);
+        this.dialogoUsuarios = dialogoUsuarios
+            .filter(this.quitarLosqueNotienenUsuario)
+            .map((dialogo, index) => this.descomponerDialogo(dialogo, formatDAte, index));
     }
     quitarLosqueNotienenUsuario(dialogo) {
         var myRe = / - [\W\w][^:]+: /g;
@@ -17,10 +23,11 @@ class GenerarDialogos {
         console.log('myArray', myArray);
         let descompuesto = dialogo.split(myArray[0]);
         let fecha = fechaFormat.parse(descompuesto[0], formatDAte);
-        console.log('descompuesto', descompuesto, fecha);
+        let usuario = myArray[0].substring(3, myArray[0].length - 2);
+        console.log('descompuesto', descompuesto, fecha, usuario);
         let emocionPorDia = {
             fecha: fecha,
-            usuario: myArray[0],
+            usuario: usuario,
             dialogo: descompuesto[1],
             idSecuenciaDialogo: index,
             puntajeEmocion: ''

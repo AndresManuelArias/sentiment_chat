@@ -10,24 +10,50 @@ class AnaliticTrabajoEmotion {
         this.emotionsDates = emotionsDates;
         this.formatDate = formatDate;
     }
-    resultAnaliticData(nombreEmotionAnalizar, columnasAnalizarWork) {
+    resultAnaliticData(columnasAnalizarWorksEmotion) {
         return new Promise((resolve) => {
             csvdata.load(this.filePath, this.optionReadCsv).then((dataWork) => {
-                resolve(this.analiticEmotionWork(dataWork, nombreEmotionAnalizar, columnasAnalizarWork));
+                resolve(this.analiticEmotionPeopleWork(dataWork, columnasAnalizarWorksEmotion));
             });
         });
     }
-    analiticEmotionWork(dataWork, nombreEmotionAnalizar, columnasAnalizarWork) {
+    resultAnaliticDataForCsv(relationWorksEmotionsDays) {
+        let relationWorksEmotionsDaysForCsv = [];
+        relationWorksEmotionsDays.forEach(resultDay => {
+            resultDay.relationScorePerson.forEach(person => {
+                relationWorksEmotionsDaysForCsv.push({
+                    fechas: resultDay.fechas,
+                    name: person.name,
+                    scoreEmotionDay: person.scoreEmotionDay,
+                    scoreWorkDay: person.scoreWorkDay
+                });
+            });
+        });
+        return relationWorksEmotionsDaysForCsv;
+    }
+    resultAnaliticDataCsv(relationWorksEmotionsDaysForCsv) {
+        let csv;
+        let titleArray = [];
+        for (let col in relationWorksEmotionsDaysForCsv[0]) {
+            titleArray.push(col);
+        }
+        csv = `${titleArray.join(',')}\n`;
+        for (let row = 1; row < relationWorksEmotionsDaysForCsv.length; row++) {
+            csv += `${relationWorksEmotionsDaysForCsv[row].fechas},${relationWorksEmotionsDaysForCsv[row].name},${relationWorksEmotionsDaysForCsv[row].scoreEmotionDay},${relationWorksEmotionsDaysForCsv[row].scoreWorkDay}\n`;
+        }
+        return csv;
+    }
+    analiticEmotionWork(dataWork, nombreEmotionAnalizar, columnaAnalizarWork) {
         let colSelect = dataWork.map(row => {
-            let fechaEdit = fechaFormat.parse(row[columnasAnalizarWork.fechas], this.formatDate);
+            let fechaEdit = fechaFormat.parse(row[columnaAnalizarWork.fechas], this.formatDate);
             console.log('fechaEdit', fechaEdit, fechaEdit.getFullYear());
             return {
                 fechas: `${fechaEdit.getFullYear()}-${fechaEdit.getUTCMonth() + 1}-${fechaEdit.getUTCDate()}`,
-                trabajoRealizado: row[columnasAnalizarWork.trabajoRealizado]
+                trabajoRealizado: row[columnaAnalizarWork.trabajoRealizado]
             };
         });
         let dateEqualWorkAndEmotion = colSelect
-            .filter(col => this.emotionsDates.some(emotionDate => { console.log("fechas parecidas", emotionDate.date, col.fechas); return emotionDate.date === col.fechas; }))
+            .filter(col => this.emotionsDates.some(emotionDate => { return emotionDate.date === col.fechas; }))
             .map((col) => {
             let scorePersonsDay = this.emotionsDates
                 .filter(emotionDate => emotionDate.date === col.fechas)[0].scorePersons
@@ -37,6 +63,41 @@ class AnaliticTrabajoEmotion {
                 fechas: col.fechas,
                 trabajoRealizado: col.trabajoRealizado,
                 emotionDay: scorePersonsDay[0].score
+            };
+        });
+        return dateEqualWorkAndEmotion;
+    }
+    analiticEmotionPeopleWork(dataWork, columnasAnalizarWorksEmotion) {
+        let formatDateWorkDay = dataWork.map(row => {
+            let data = {};
+            let fechaEdit = fechaFormat.parse(row[columnasAnalizarWorksEmotion.columnaFechasSelect], this.formatDate);
+            console.log('fechaEdit', fechaEdit, fechaEdit.getFullYear());
+            data.fechas = `${fechaEdit.getFullYear()}-${fechaEdit.getUTCMonth() + 1}-${fechaEdit.getUTCDate()}`;
+            columnasAnalizarWorksEmotion.columnasTrabajosRealizadosEmotion.forEach((value) => {
+                data[value.colWorkDay] = row[value.colWorkDay];
+            });
+            return data;
+        });
+        console.log('formatDateWorkDay', formatDateWorkDay[0]);
+        let dateEqualWorkAndEmotion = formatDateWorkDay
+            .filter(col => this.emotionsDates.some(emotionDate => { return emotionDate.date === col.fechas; }))
+            .map((col) => {
+            let resultData = columnasAnalizarWorksEmotion.columnasTrabajosRealizadosEmotion.map((value) => {
+                let puntajeEmotion = this.emotionsDates.filter(emotionDate => emotionDate.date === col.fechas);
+                let usuarioScoreEmotion = puntajeEmotion[0].scorePersons.filter(usuario => usuario.name == value.colLevelEmotion);
+                console.log('usuarioScoreEmotion', usuarioScoreEmotion);
+                return {
+                    name: value.colLevelEmotion,
+                    scoreEmotionDay: usuarioScoreEmotion[0].score,
+                    scoreWorkDay: col[value.colWorkDay]
+                };
+            });
+            console.log('resultData', resultData);
+            let resultDataNoNull = resultData.filter(user => typeof user.scoreEmotionDay === 'number' && typeof user.scoreWorkDay === 'number');
+            console.log('resultDataNoNull', resultDataNoNull);
+            return {
+                fechas: col.fechas,
+                relationScorePerson: resultDataNoNull
             };
         });
         return dateEqualWorkAndEmotion;

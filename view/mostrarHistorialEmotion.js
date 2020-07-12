@@ -1,27 +1,67 @@
 var fs = require('fs'), resultEmotionDate = JSON.parse(fs.readFileSync('../base_data/resultEmotionDate.json', 'utf-8')), resultEmotionWork = JSON.parse(fs.readFileSync('../base_data/analiticTrabajoEmotion.json', 'utf-8'));
 [];
 [];
-[];
 function dataLinesDateWorkEmotion(workEmotion) {
     var datasetsLine = [];
     var labelsDate = [];
-    var arrTrabajo = workEmotion.map(function (data) { return data.trabajoRealizado; });
-    var maxTrabajo = Math.max.apply(Math, arrTrabajo);
-    var arrEmotion = workEmotion.map(function (data) { return data.emotionDay; });
-    var maxEmotion = Math.max.apply(Math, arrEmotion);
-    workEmotion = workEmotion.map(function (data) {
-        return {
-            fechas: data.fechas,
-            trabajoRealizado: data.trabajoRealizado / maxTrabajo,
-            emotionDay: data.emotionDay / maxEmotion
-        };
+    var converWorkEmotion = workEmotion.map(function (we) {
+        var arrTrabajo = we.relationScorePerson.map(function (data) { return data.scoreWorkDay; });
+        var maxTrabajo = Math.max.apply(Math, arrTrabajo);
+        var arrEmotion = we.relationScorePerson.map(function (data) { return data.scoreEmotionDay; });
+        var maxEmotion = Math.max.apply(Math, arrEmotion);
+        return we.relationScorePerson.map(function (data) {
+            return {
+                name: data.name,
+                scoreWorkDay: data.scoreWorkDay / maxTrabajo,
+                scoreEmotionDay: data.scoreEmotionDay / maxEmotion
+            };
+        });
     });
+    console.log('converWorkEmotion', converWorkEmotion);
     labelsDate = workEmotion.map(function (data) { return "" + data.fechas; });
-    ['emotionDay', 'trabajoRealizado'].forEach(function (label) {
+    // ['emotionDay','trabajoRealizado']
+    var nombreUsuariosMap = new Map();
+    var nombreUsuarios = [];
+    workEmotion.forEach(function (dias) { return dias.relationScorePerson.forEach(function (datos) { return nombreUsuariosMap.set(datos.name, datos.name); }); });
+    nombreUsuariosMap.forEach(function (nombre) { return nombreUsuarios.push(nombre); });
+    console.log('nombreUsuarios', nombreUsuarios);
+    ['scoreEmotionDay', 'scoreWorkDay'].forEach(function (element) {
+        nombreUsuarios.forEach(function (label) {
+            var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            var filtradoPersona = workEmotion.map(function (we) {
+                return we.relationScorePerson.filter(function (personas) { return personas.name == label; })[0][element];
+            });
+            console.log('filtradoPersona[0]', filtradoPersona[0], label);
+            var data = filtradoPersona;
+            console.log('data', data);
+            datasetsLine.push({
+                label: label + "-" + element,
+                borderColor: "#" + randomColor,
+                backgroundColor: "#" + randomColor,
+                data: data,
+                fill: false,
+                lineTension: 0.1
+            });
+        });
+    });
+    return "{\n        labels: " + JSON.stringify(labelsDate) + ",\n        datasets: " + JSON.stringify(datasetsLine) + "\n    }";
+}
+function dataLinesWorkEmotion(workEmotion) {
+    var datasetsLine = [];
+    var labelsDate = {};
+    var nombreUsuariosMap = new Map();
+    var nombreUsuarios = [];
+    workEmotion.forEach(function (dias) { return dias.relationScorePerson.forEach(function (datos) { return nombreUsuariosMap.set(datos.name, datos.name); }); });
+    nombreUsuariosMap.forEach(function (nombre) { return nombreUsuarios.push(nombre); });
+    nombreUsuarios.forEach(function (nombre) {
+        var datosFiltrados = workEmotion.map(function (dias) { return dias.relationScorePerson.filter(function (datos) { return datos.name == nombre; })[0]; });
+        var datosOrdenado = datosFiltrados.sort(function (a, b) { return a.scoreWorkDay - b.scoreWorkDay; });
         var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        var data = workEmotion.map(function (data) { return data[label]; });
-        datasetsLine.push({
-            label: label,
+        var data = datosOrdenado.map(function (data) {
+            labelsDate[data.scoreWorkDay] = data.scoreWorkDay;
+            return data.scoreEmotionDay;
+        });
+        datasetsLine.push({ label: nombre,
             borderColor: "#" + randomColor,
             backgroundColor: "#" + randomColor,
             data: data,
@@ -29,23 +69,12 @@ function dataLinesDateWorkEmotion(workEmotion) {
             lineTension: 0.1
         });
     });
-    return "{\n        labels: " + JSON.stringify(labelsDate) + ",\n        datasets: " + JSON.stringify(datasetsLine) + "\n    }";
-}
-function dataLinesWorkEmotion(workEmotion) {
-    var datasetsLine = [];
-    var labelsDate = [];
-    var datosOrdenado = workEmotion.sort(function (a, b) { return a.trabajoRealizado - b.trabajoRealizado; });
-    labelsDate = datosOrdenado.map(function (data) { return "" + data.trabajoRealizado; });
-    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    var data = datosOrdenado.map(function (data) { return data.emotionDay; });
-    datasetsLine.push({ label: 'Emocion',
-        borderColor: "#" + randomColor,
-        backgroundColor: "#" + randomColor,
-        data: data,
-        fill: false,
-        lineTension: 0.1
-    });
-    return "{\n        labels: " + JSON.stringify(labelsDate) + ",\n        datasets: " + JSON.stringify(datasetsLine) + "\n    }";
+    var orderLabelsWork = [];
+    for (var date in labelsDate) {
+        orderLabelsWork.push(labelsDate[date]);
+    }
+    orderLabelsWork.sort(function (a, b) { return a - b; });
+    return "{\n        labels: " + JSON.stringify(orderLabelsWork) + ",\n        datasets: " + JSON.stringify(datasetsLine) + "\n    }";
 }
 function dataLines(emotionDate) {
     var datasetsLine = [];

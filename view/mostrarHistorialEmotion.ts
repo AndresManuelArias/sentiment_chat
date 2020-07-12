@@ -1,6 +1,7 @@
 const fs = require('fs'),
  resultEmotionDate = JSON.parse(fs.readFileSync('../base_data/resultEmotionDate.json', 'utf-8')),
  resultEmotionWork = JSON.parse(fs.readFileSync('../base_data/analiticTrabajoEmotion.json', 'utf-8'));
+// const nombreUsuarios = JSON.parse(fs.readFileSync('../base_data/nombreUsuarios.json', 'utf-8'));
 
 
 interface EsqueletoHTML {
@@ -24,60 +25,93 @@ interface LineData{
     fill:boolean,
     lineTension:number
 }
-interface WorkEmotion {
-    fechas:string
-    trabajoRealizado:number
-    emotionDay:number
-}[]
-function dataLinesDateWorkEmotion(workEmotion:WorkEmotion[]):string{
+interface RelationWorksEmotionsDays{
+    fechas:string,
+    relationScorePerson:RelationScorePerson[]
+}
+    
+interface RelationScorePerson{
+    name:string,
+    scoreEmotionDay:number,
+    scoreWorkDay: number
+}
+function dataLinesDateWorkEmotion(workEmotion:RelationWorksEmotionsDays[]):string{
     let datasetsLine:LineData[] = [];
     let labelsDate:string[]=[];
-    let arrTrabajo = workEmotion.map(data => {return  data.trabajoRealizado});
-    var maxTrabajo = Math.max(...arrTrabajo);
-    let arrEmotion = workEmotion.map(data => {return  data.emotionDay});
-    var maxEmotion = Math.max(...arrEmotion);
-    workEmotion = workEmotion.map(data => {return  {
-        fechas:data.fechas,
-        trabajoRealizado:data.trabajoRealizado/maxTrabajo,
-        emotionDay:data.emotionDay/maxEmotion
-    }})
-    labelsDate = workEmotion.map(data => {return  `${data.fechas}`});
-    ['emotionDay','trabajoRealizado'].forEach((label)=>{
-        var randomColor = Math.floor(Math.random()*16777215).toString(16);
-        let data = workEmotion.map(data => {return  data[label]});
-        datasetsLine.push({
-            label:label,
-            borderColor:`#${randomColor}`,
-            backgroundColor:`#${randomColor}`,
-            data:data,
-            fill:false,
-            lineTension:0.1
-        });
+    let converWorkEmotion = workEmotion.map(we=>{
+        let arrTrabajo = we.relationScorePerson.map(data => {return  data.scoreWorkDay});
+        var maxTrabajo = Math.max(...arrTrabajo);
+        let arrEmotion = we.relationScorePerson.map(data => {return  data.scoreEmotionDay});
+        var maxEmotion = Math.max(...arrEmotion);
+        return we.relationScorePerson.map(data => {return  {
+            name:data.name,
+            scoreWorkDay:data.scoreWorkDay/maxTrabajo,
+            scoreEmotionDay:data.scoreEmotionDay/maxEmotion
+        }})
     })
+    console.log('converWorkEmotion',converWorkEmotion);
+    labelsDate = workEmotion.map(data => {return  `${data.fechas}`});
+    // ['emotionDay','trabajoRealizado']
+    let nombreUsuariosMap = new Map();
+    let nombreUsuarios = [];
+    workEmotion.forEach((dias)=>  dias.relationScorePerson.forEach(datos => nombreUsuariosMap.set(datos.name,datos.name)));
+    nombreUsuariosMap.forEach(nombre => nombreUsuarios.push(nombre) );
+    console.log('nombreUsuarios',nombreUsuarios);
+    ['scoreEmotionDay','scoreWorkDay'].forEach(element => {
+        nombreUsuarios.forEach((label)=>{
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            let filtradoPersona = workEmotion.map(we=>{
+                return we.relationScorePerson.filter(personas => personas.name == label)[0][element]
+            })
+            console.log('filtradoPersona[0]',filtradoPersona[0],label)
+            let data = filtradoPersona;
+            console.log('data',data);
+            datasetsLine.push({
+                label:`${label}-${element}`,
+                borderColor:`#${randomColor}`,
+                backgroundColor:`#${randomColor}`,
+                data:data,
+                fill:false,
+                lineTension:0.1
+            });
+        })       
+    });
     return  `{
         labels: ${JSON.stringify(labelsDate)},
         datasets: ${JSON.stringify(datasetsLine)}
     }`;
 }
-function dataLinesWorkEmotion(workEmotion:WorkEmotion[]):string{
-    
+function dataLinesWorkEmotion(workEmotion:RelationWorksEmotionsDays[]):string{   
     let datasetsLine:LineData[] = [];
-    let labelsDate:string[]=[];
-    let datosOrdenado = workEmotion.sort((a,b)=> a.trabajoRealizado - b.trabajoRealizado);
-    labelsDate = datosOrdenado.map(data => {return  `${data.trabajoRealizado}`});
-    
-    var randomColor = Math.floor(Math.random()*16777215).toString(16);
-    let data = datosOrdenado.map(data => {return  data.emotionDay});
-    datasetsLine.push({    label:'Emocion',
-        borderColor:`#${randomColor}`,
-        backgroundColor:`#${randomColor}`,
-        data:data,
-        fill:false,
-        lineTension:0.1
+    let labelsDate = {};
+    let nombreUsuariosMap = new Map();
+    let nombreUsuarios = [];
+    workEmotion.forEach((dias)=>  dias.relationScorePerson.forEach(datos => nombreUsuariosMap.set(datos.name,datos.name)));
+    nombreUsuariosMap.forEach(nombre => nombreUsuarios.push(nombre) );
+    nombreUsuarios.forEach(nombre => {
+        let datosFiltrados = workEmotion.map((dias)=> dias.relationScorePerson.filter(datos => datos.name == nombre)[0]);
+        let datosOrdenado = datosFiltrados.sort((a,b)=> a.scoreWorkDay - b.scoreWorkDay);
+        
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        let data = datosOrdenado.map(data => {
+            labelsDate[data.scoreWorkDay]= data.scoreWorkDay;            
+            return  data.scoreEmotionDay
+        });
+        datasetsLine.push({    label:nombre,
+            borderColor:`#${randomColor}`,
+            backgroundColor:`#${randomColor}`,
+            data:data,
+            fill:false,
+            lineTension:0.1
+        });      
     });
-
+    let orderLabelsWork:number[] = [];
+    for(let date in  labelsDate){
+        orderLabelsWork.push(labelsDate[date]);
+    }
+    orderLabelsWork.sort((a,b)=> a-b );
     return  `{
-        labels: ${JSON.stringify(labelsDate)},
+        labels: ${JSON.stringify(orderLabelsWork)},
         datasets: ${JSON.stringify(datasetsLine)}
     }`;
 }

@@ -1,0 +1,399 @@
+fechas,name,scoreEmotionDay,scoreWorkDay
+2018-6-27,Yeral Dane,0,1
+2018-6-27,yenni ballen- cens dane,NaN,4
+2018-6-27,Diana P Dane,NaN,8
+2018-6-27,gloria reyes cens dane,NaN,8
+2018-6-27,fabdury valencia-cens dane,NaN,11
+2018-6-27,Sandra Carolina Lara Dane,NaN,0
+2018-6-28,sentiment natural,-0.005291005291005291,49
+2018-6-28,Yeral Dane,-0.07692307692307693,8
+2018-6-28,yenni ballen- cens dane,0,12
+2018-6-28,Diana P Dane,0,6
+2018-6-28,gloria reyes cens dane,0,12
+2018-6-28,fabdury valencia-cens dane,NaN,11
+2018-6-28,Sandra Carolina Lara Dane,NaN,0
+2018-6-29,sentiment natural,-0.008032128514056224,64
+2018-6-29,Yeral Dane,0.25,8
+2018-6-29,yenni ballen- cens dane,NaN,11
+2018-6-29,Diana P Dane,0,10
+2018-6-29,gloria reyes cens dane,NaN,15
+2018-6-29,fabdury valencia-cens dane,NaN,20
+2018-6-29,Sandra Carolina Lara Dane,NaN,0
+2018-6-30,sentiment natural,-0.03759398496240601,32
+2018-6-30,Yeral Dane,NaN,10
+2018-6-30,yenni ballen- cens dane,0,0
+2018-6-30,Diana P Dane,NaN,0
+2018-6-30,gloria reyes cens dane,NaN,12
+2018-6-30,fabdury valencia-cens dane,NaN,10
+2018-6-30,Sandra Carolina Lara Dane,NaN,0
+2018-7-3,sentiment natural,-0.02745664739884393,71
+2018-7-3,Yeral Dane,NaN,11
+2018-7-3,yenni ballen- cens dane,-0.07079646017699115,0
+2018-7-3,Diana P Dane,0.030303030303030304,32
+2018-7-3,gloria reyes cens dane,NaN,15
+2018-7-3,fabdury valencia-cens dane,NaN,13
+2018-7-3,Sandra Carolina Lara Dane,NaN,0
+2018-7-4,sentiment natural,-0.027051397655545536,64
+2018-7-4,Yeral Dane,-0.041666666666666664,13
+2018-7-4,yenni ballen- cens dane,-0.026737967914438502,14
+2018-7-4,Diana P Dane,-0.009900990099009901,11
+2018-7-4,gloria reyes cens dane,NaN,13
+2018-7-4,fabdury valencia-cens dane,NaN,13
+2018-7-4,Sandra Carolina Lara Dane,NaN,0
+2018-7-5,sentiment natural,0.014044943820224719,59
+2018-7-5,Yeral Dane,0,14
+2018-7-5,yenni ballen- cens dane,0,8
+2018-7-5,Diana P Dane,NaN,13
+2018-7-5,gloria reyes cens dane,NaN,12
+2018-7-5,fabdury valencia-cens dane,0,12
+2018-7-5,Sandra Carolina Lara Dane,NaN,0
+2018-7-6,sentiment natural,-0.004672897196261682,70
+2018-7-6,Yeral Dane,NaN,11
+2018-7-6,yenni ballen- cens dane,0,15
+2018-7-6,Diana P Dane,NaN,9
+2018-7-6,gloria reyes cens dane,NaN,13
+2018-7-6,fabdury valencia-cens dane,NaN,22
+2018-7-6,Sandra Carolina Lara Dane,NaN,0
+2018-7-7,sentiment natural,0,16
+2018-7-7,Yeral Dane,NaN,4
+2018-7-7,yenni ballen- cens dane,NaN,3
+2018-7-7,Diana P Dane,NaN,9
+2018-7-7,gloria reyes cens dane,NaN,0
+2018-7-7,fabdury valencia-cens dane,NaN,0
+2018-7-7,Sandra Carolina Lara Dane,NaN,0
+2018-7-9,sentiment natural,-0.015655577299412915,110
+2018-7-9,Yeral Dane,0,15
+2018-7-9,yenni ballen- cens dane,0,16
+2018-7-9,Diana P Dane,NaN,21
+2018-7-9,gloria reyes cens dane,NaN,23
+2018-7-9,fabdury valencia-cens dane,0,34
+2018-7-9,Sandra Carolina Lara Dane,NaN,0
+2018-7-10,sentiment natural,-0.005319148936170213,88
+2018-7-10,Yeral Dane,0,11
+2018-7-10,yenni ballen- cens dane,0.08823529411764706,22
+2018-7-10,Diana P Dane,0,15
+2018-7-10,gloria reyes cens dane,NaN,19
+2018-7-10,fabdury valencia-cens dane,NaN,21
+2018-7-10,Sandra Carolina Lara Dane,NaN,0
+2018-7-11,sentiment natural,0,115
+2018-7-11,Yeral Dane,0,22
+2018-7-11,yenni ballen- cens dane,0,22
+2018-7-11,Diana P Dane,0,31
+2018-7-11,gloria reyes cens dane,NaN,19
+2018-7-11,fabdury valencia-cens dane,NaN,21
+2018-7-11,Sandra Carolina Lara Dane,NaN,0
+2018-7-12,sentiment natural,-0.004282655246252677,102
+2018-7-12,Yeral Dane,0,14
+2018-7-12,yenni ballen- cens dane,0,31
+2018-7-12,Diana P Dane,-0.034482758620689655,17
+2018-7-12,gloria reyes cens dane,NaN,21
+2018-7-12,fabdury valencia-cens dane,NaN,18
+2018-7-12,Sandra Carolina Lara Dane,NaN,0
+2018-7-14,sentiment natural,0,43
+2018-7-14,Yeral Dane,0,8
+2018-7-14,yenni ballen- cens dane,NaN,0
+2018-7-14,Diana P Dane,NaN,7
+2018-7-14,gloria reyes cens dane,NaN,14
+2018-7-14,fabdury valencia-cens dane,NaN,13
+2018-7-14,Sandra Carolina Lara Dane,NaN,0
+2018-7-16,sentiment natural,0,95
+2018-7-16,Yeral Dane,NaN,16
+2018-7-16,yenni ballen- cens dane,0,23
+2018-7-16,Diana P Dane,0.1,23
+2018-7-16,gloria reyes cens dane,NaN,15
+2018-7-16,fabdury valencia-cens dane,-0.030303030303030304,18
+2018-7-16,Sandra Carolina Lara Dane,NaN,0
+2018-7-17,sentiment natural,0.006230529595015576,69
+2018-7-17,Yeral Dane,0.5,18
+2018-7-17,yenni ballen- cens dane,-0.05,5
+2018-7-17,Diana P Dane,-0.038461538461538464,15
+2018-7-17,gloria reyes cens dane,NaN,16
+2018-7-17,fabdury valencia-cens dane,NaN,15
+2018-7-17,Sandra Carolina Lara Dane,NaN,0
+2018-7-18,sentiment natural,0.011976047904191617,72
+2018-7-18,Yeral Dane,0,17
+2018-7-18,yenni ballen- cens dane,-0.125,17
+2018-7-18,Diana P Dane,-0.0625,12
+2018-7-18,gloria reyes cens dane,NaN,17
+2018-7-18,fabdury valencia-cens dane,NaN,9
+2018-7-18,Sandra Carolina Lara Dane,NaN,0
+2018-7-19,sentiment natural,0.004149377593360996,83
+2018-7-19,Yeral Dane,0,22
+2018-7-19,yenni ballen- cens dane,0,17
+2018-7-19,Diana P Dane,0,5
+2018-7-19,gloria reyes cens dane,NaN,19
+2018-7-19,fabdury valencia-cens dane,NaN,20
+2018-7-19,Sandra Carolina Lara Dane,NaN,0
+2018-7-20,sentiment natural,0.004754358161648178,69
+2018-7-20,Yeral Dane,NaN,0
+2018-7-20,yenni ballen- cens dane,0,14
+2018-7-20,Diana P Dane,0,18
+2018-7-20,gloria reyes cens dane,0,16
+2018-7-20,fabdury valencia-cens dane,NaN,21
+2018-7-20,Sandra Carolina Lara Dane,NaN,0
+2018-7-21,sentiment natural,-0.0611353711790393,42
+2018-7-21,Yeral Dane,0,6
+2018-7-21,yenni ballen- cens dane,0,5
+2018-7-21,Diana P Dane,0.10256410256410256,9
+2018-7-21,gloria reyes cens dane,0,12
+2018-7-21,fabdury valencia-cens dane,NaN,10
+2018-7-21,Sandra Carolina Lara Dane,NaN,0
+2018-7-22,sentiment natural,0.06741573033707865,60
+2018-7-22,Yeral Dane,NaN,0
+2018-7-22,yenni ballen- cens dane,0,18
+2018-7-22,Diana P Dane,0.25,13
+2018-7-22,gloria reyes cens dane,NaN,14
+2018-7-22,fabdury valencia-cens dane,NaN,15
+2018-7-22,Sandra Carolina Lara Dane,NaN,0
+2018-7-23,sentiment natural,0,69
+2018-7-23,Yeral Dane,0,13
+2018-7-23,yenni ballen- cens dane,0,12
+2018-7-23,Diana P Dane,0,12
+2018-7-23,gloria reyes cens dane,0,17
+2018-7-23,fabdury valencia-cens dane,NaN,15
+2018-7-23,Sandra Carolina Lara Dane,NaN,0
+2018-7-25,sentiment natural,-0.00234192037470726,60
+2018-7-25,Yeral Dane,NaN,12
+2018-7-25,yenni ballen- cens dane,-0.06451612903225806,4
+2018-7-25,Diana P Dane,0,10
+2018-7-25,gloria reyes cens dane,NaN,18
+2018-7-25,fabdury valencia-cens dane,0,16
+2018-7-25,Sandra Carolina Lara Dane,NaN,0
+2018-7-26,sentiment natural,-0.016701461377870562,87
+2018-7-26,Yeral Dane,NaN,11
+2018-7-26,yenni ballen- cens dane,NaN,13
+2018-7-26,Diana P Dane,-0.029850746268656716,22
+2018-7-26,gloria reyes cens dane,NaN,15
+2018-7-26,fabdury valencia-cens dane,0,26
+2018-7-26,Sandra Carolina Lara Dane,NaN,0
+2018-7-27,sentiment natural,-0.05555555555555555,76
+2018-7-27,Yeral Dane,0,14
+2018-7-27,yenni ballen- cens dane,0,17
+2018-7-27,Diana P Dane,0.5,11
+2018-7-27,gloria reyes cens dane,NaN,16
+2018-7-27,fabdury valencia-cens dane,NaN,18
+2018-7-27,Sandra Carolina Lara Dane,NaN,0
+2018-7-28,sentiment natural,0.06557377049180328,62
+2018-7-28,Yeral Dane,NaN,16
+2018-7-28,yenni ballen- cens dane,NaN,9
+2018-7-28,Diana P Dane,0,12
+2018-7-28,gloria reyes cens dane,NaN,15
+2018-7-28,fabdury valencia-cens dane,NaN,9
+2018-7-28,Sandra Carolina Lara Dane,NaN,0
+2018-7-30,sentiment natural,0.008695652173913044,112
+2018-7-30,Yeral Dane,NaN,17
+2018-7-30,yenni ballen- cens dane,-0.03676470588235294,28
+2018-7-30,Diana P Dane,0,20
+2018-7-30,gloria reyes cens dane,NaN,28
+2018-7-30,fabdury valencia-cens dane,0,19
+2018-7-30,Sandra Carolina Lara Dane,NaN,0
+2018-7-31,sentiment natural,0.010471204188481676,81
+2018-7-31,Yeral Dane,-0.038461538461538464,6
+2018-7-31,yenni ballen- cens dane,0,17
+2018-7-31,Diana P Dane,NaN,11
+2018-7-31,gloria reyes cens dane,NaN,31
+2018-7-31,fabdury valencia-cens dane,NaN,16
+2018-7-31,Sandra Carolina Lara Dane,NaN,0
+2018-8-1,sentiment natural,0.012244897959183673,90
+2018-8-1,Yeral Dane,0,17
+2018-8-1,yenni ballen- cens dane,0,8
+2018-8-1,Diana P Dane,NaN,20
+2018-8-1,gloria reyes cens dane,NaN,27
+2018-8-1,fabdury valencia-cens dane,NaN,18
+2018-8-1,Sandra Carolina Lara Dane,NaN,0
+2018-8-2,sentiment natural,0.011363636363636364,98
+2018-8-2,Yeral Dane,NaN,17
+2018-8-2,yenni ballen- cens dane,0,33
+2018-8-2,Diana P Dane,0.05714285714285714,22
+2018-8-2,gloria reyes cens dane,NaN,0
+2018-8-2,fabdury valencia-cens dane,NaN,26
+2018-8-2,Sandra Carolina Lara Dane,NaN,0
+2018-8-3,sentiment natural,0.09523809523809523,83
+2018-8-3,Yeral Dane,NaN,32
+2018-8-3,yenni ballen- cens dane,0.125,13
+2018-8-3,Diana P Dane,NaN,0
+2018-8-3,gloria reyes cens dane,NaN,20
+2018-8-3,fabdury valencia-cens dane,NaN,18
+2018-8-3,Sandra Carolina Lara Dane,NaN,0
+2018-8-4,sentiment natural,0.023076923076923078,55
+2018-8-4,Yeral Dane,NaN,12
+2018-8-4,yenni ballen- cens dane,0,6
+2018-8-4,Diana P Dane,0.1,9
+2018-8-4,gloria reyes cens dane,NaN,19
+2018-8-4,fabdury valencia-cens dane,NaN,9
+2018-8-4,Sandra Carolina Lara Dane,NaN,0
+2018-8-6,sentiment natural,-0.01715686274509804,93
+2018-8-6,Yeral Dane,NaN,18
+2018-8-6,yenni ballen- cens dane,0.012345679012345678,17
+2018-8-6,Diana P Dane,0.5,20
+2018-8-6,gloria reyes cens dane,NaN,20
+2018-8-6,fabdury valencia-cens dane,0.09836065573770492,18
+2018-8-6,Sandra Carolina Lara Dane,NaN,0
+2018-8-8,sentiment natural,0.009111617312072893,147
+2018-8-8,Yeral Dane,0,21
+2018-8-8,yenni ballen- cens dane,0,37
+2018-8-8,Diana P Dane,NaN,8
+2018-8-8,gloria reyes cens dane,NaN,16
+2018-8-8,fabdury valencia-cens dane,0.03125,65
+2018-8-8,Sandra Carolina Lara Dane,NaN,0
+2018-8-9,sentiment natural,-0.012077294685990338,96
+2018-8-9,Yeral Dane,NaN,20
+2018-8-9,yenni ballen- cens dane,0,20
+2018-8-9,Diana P Dane,0.0625,18
+2018-8-9,gloria reyes cens dane,NaN,20
+2018-8-9,fabdury valencia-cens dane,NaN,13
+2018-8-9,Sandra Carolina Lara Dane,NaN,5
+2018-8-10,sentiment natural,-0.0024449877750611247,345
+2018-8-10,Yeral Dane,0,56
+2018-8-10,yenni ballen- cens dane,0.005128205128205128,94
+2018-8-10,Diana P Dane,0,65
+2018-8-10,gloria reyes cens dane,NaN,81
+2018-8-10,fabdury valencia-cens dane,NaN,15
+2018-8-10,Sandra Carolina Lara Dane,NaN,34
+2018-8-11,sentiment natural,0.049689440993788817,65
+2018-8-11,Yeral Dane,NaN,21
+2018-8-11,yenni ballen- cens dane,NaN,3
+2018-8-11,Diana P Dane,0,7
+2018-8-11,gloria reyes cens dane,NaN,22
+2018-8-11,fabdury valencia-cens dane,NaN,7
+2018-8-11,Sandra Carolina Lara Dane,NaN,5
+2018-8-13,sentiment natural,0.02063628546861565,90
+2018-8-13,Yeral Dane,NaN,22
+2018-8-13,yenni ballen- cens dane,0.023255813953488372,35
+2018-8-13,Diana P Dane,-0.029850746268656716,0
+2018-8-13,gloria reyes cens dane,0,22
+2018-8-13,fabdury valencia-cens dane,-0.024390243902439025,11
+2018-8-13,Sandra Carolina Lara Dane,NaN,0
+2018-8-14,sentiment natural,-0.0018552875695732839,91
+2018-8-14,Yeral Dane,NaN,20
+2018-8-14,yenni ballen- cens dane,NaN,20
+2018-8-14,Diana P Dane,NaN,19
+2018-8-14,gloria reyes cens dane,NaN,19
+2018-8-14,fabdury valencia-cens dane,NaN,12
+2018-8-14,Sandra Carolina Lara Dane,NaN,1
+2018-8-15,sentiment natural,-0.0044365572315882874,91
+2018-8-15,Yeral Dane,NaN,23
+2018-8-15,yenni ballen- cens dane,NaN,21
+2018-8-15,Diana P Dane,0.06153846153846154,14
+2018-8-15,gloria reyes cens dane,0,20
+2018-8-15,fabdury valencia-cens dane,NaN,13
+2018-8-15,Sandra Carolina Lara Dane,0.2857142857142857,0
+2018-8-16,sentiment natural,-0.015659955257270694,126
+2018-8-16,Yeral Dane,NaN,18
+2018-8-16,yenni ballen- cens dane,0,25
+2018-8-16,Diana P Dane,0,22
+2018-8-16,gloria reyes cens dane,NaN,21
+2018-8-16,fabdury valencia-cens dane,NaN,18
+2018-8-16,Sandra Carolina Lara Dane,0,22
+2018-8-17,sentiment natural,-0.013568521031207599,102
+2018-8-17,Yeral Dane,NaN,16
+2018-8-17,yenni ballen- cens dane,0,20
+2018-8-17,Diana P Dane,-0.057692307692307696,18
+2018-8-17,gloria reyes cens dane,NaN,19
+2018-8-17,fabdury valencia-cens dane,NaN,18
+2018-8-17,Sandra Carolina Lara Dane,0,11
+2018-8-18,sentiment natural,0.0025,45
+2018-8-18,Yeral Dane,0,7
+2018-8-18,yenni ballen- cens dane,NaN,0
+2018-8-18,Diana P Dane,0,15
+2018-8-18,gloria reyes cens dane,0,12
+2018-8-18,fabdury valencia-cens dane,NaN,11
+2018-8-18,Sandra Carolina Lara Dane,NaN,0
+2018-8-21,sentiment natural,-0.013012361743656473,67
+2018-8-21,Yeral Dane,NaN,15
+2018-8-21,yenni ballen- cens dane,-0.09523809523809523,15
+2018-8-21,Diana P Dane,0,11
+2018-8-21,gloria reyes cens dane,NaN,19
+2018-8-21,fabdury valencia-cens dane,0,7
+2018-8-21,Sandra Carolina Lara Dane,0,0
+2018-8-22,sentiment natural,-0.011571841851494697,105
+2018-8-22,Yeral Dane,0,17
+2018-8-22,yenni ballen- cens dane,-0.022727272727272728,20
+2018-8-22,Diana P Dane,0.02830188679245283,18
+2018-8-22,gloria reyes cens dane,NaN,17
+2018-8-22,fabdury valencia-cens dane,NaN,12
+2018-8-22,Sandra Carolina Lara Dane,NaN,21
+2018-8-23,sentiment natural,-0.005398110661268556,104
+2018-8-23,Yeral Dane,0,16
+2018-8-23,yenni ballen- cens dane,0,20
+2018-8-23,Diana P Dane,0.024390243902439025,25
+2018-8-23,gloria reyes cens dane,NaN,18
+2018-8-23,fabdury valencia-cens dane,NaN,20
+2018-8-23,Sandra Carolina Lara Dane,0,5
+2018-8-24,sentiment natural,0,86
+2018-8-24,Yeral Dane,NaN,14
+2018-8-24,yenni ballen- cens dane,0,16
+2018-8-24,Diana P Dane,0,17
+2018-8-24,gloria reyes cens dane,NaN,17
+2018-8-24,fabdury valencia-cens dane,NaN,18
+2018-8-24,Sandra Carolina Lara Dane,0.0136986301369863,4
+2018-8-28,sentiment natural,-0.0205761316872428,90
+2018-8-28,Yeral Dane,NaN,13
+2018-8-28,yenni ballen- cens dane,0,17
+2018-8-28,Diana P Dane,0,11
+2018-8-28,gloria reyes cens dane,NaN,13
+2018-8-28,fabdury valencia-cens dane,0.26666666666666666,16
+2018-8-28,Sandra Carolina Lara Dane,0,20
+2018-8-29,sentiment natural,-0.0014076576576576576,66
+2018-8-29,Yeral Dane,0,6
+2018-8-29,yenni ballen- cens dane,0,10
+2018-8-29,Diana P Dane,0,8
+2018-8-29,gloria reyes cens dane,NaN,6
+2018-8-29,fabdury valencia-cens dane,0,18
+2018-8-29,Sandra Carolina Lara Dane,0,18
+2018-8-30,sentiment natural,-0.014634146341463415,87
+2018-8-30,Yeral Dane,0,14
+2018-8-30,yenni ballen- cens dane,-0.07142857142857142,11
+2018-8-30,Diana P Dane,0,10
+2018-8-30,gloria reyes cens dane,0,18
+2018-8-30,fabdury valencia-cens dane,0,19
+2018-8-30,Sandra Carolina Lara Dane,0,15
+2018-8-31,sentiment natural,-0.023084994753410283,86
+2018-8-31,Yeral Dane,0,17
+2018-8-31,yenni ballen- cens dane,0,12
+2018-8-31,Diana P Dane,0.0449438202247191,13
+2018-8-31,gloria reyes cens dane,0,18
+2018-8-31,fabdury valencia-cens dane,0,20
+2018-8-31,Sandra Carolina Lara Dane,-0.02857142857142857,6
+2018-9-1,sentiment natural,-0.0037481259370314842,74
+2018-9-1,Yeral Dane,0.012987012987012988,11
+2018-9-1,yenni ballen- cens dane,-0.0425531914893617,15
+2018-9-1,Diana P Dane,0,9
+2018-9-1,gloria reyes cens dane,0,11
+2018-9-1,fabdury valencia-cens dane,0,10
+2018-9-1,Sandra Carolina Lara Dane,0.1111111111111111,18
+2018-9-3,sentiment natural,0.004415011037527594,88
+2018-9-3,Yeral Dane,0,13
+2018-9-3,yenni ballen- cens dane,0.03305785123966942,17
+2018-9-3,Diana P Dane,0.03389830508474576,14
+2018-9-3,gloria reyes cens dane,0,18
+2018-9-3,fabdury valencia-cens dane,0,15
+2018-9-3,Sandra Carolina Lara Dane,0.00819672131147541,11
+2018-9-4,sentiment natural,-0.017137096774193547,80
+2018-9-4,Yeral Dane,0,16
+2018-9-4,yenni ballen- cens dane,NaN,0
+2018-9-4,Diana P Dane,0,17
+2018-9-4,gloria reyes cens dane,NaN,16
+2018-9-4,fabdury valencia-cens dane,0,21
+2018-9-4,Sandra Carolina Lara Dane,0.07692307692307693,10
+2018-9-5,sentiment natural,0.012338425381903642,81
+2018-9-5,Yeral Dane,0,13
+2018-9-5,yenni ballen- cens dane,0.034482758620689655,22
+2018-9-5,Diana P Dane,0.02247191011235955,11
+2018-9-5,gloria reyes cens dane,0,12
+2018-9-5,fabdury valencia-cens dane,0,13
+2018-9-5,Sandra Carolina Lara Dane,0,10
+2018-9-6,sentiment natural,-0.0004166666666666667,78
+2018-9-6,Yeral Dane,-0.023255813953488372,36
+2018-9-6,yenni ballen- cens dane,0,2
+2018-9-6,Diana P Dane,-0.022727272727272728,3
+2018-9-6,gloria reyes cens dane,0,21
+2018-9-6,fabdury valencia-cens dane,-0.013071895424836602,0
+2018-9-6,Sandra Carolina Lara Dane,0,16
+2018-9-7,sentiment natural,-0.006437768240343348,40
+2018-9-7,Yeral Dane,-0.031746031746031744,0
+2018-9-7,yenni ballen- cens dane,-0.014705882352941176,0
+2018-9-7,Diana P Dane,0,32
+2018-9-7,gloria reyes cens dane,0,0
+2018-9-7,fabdury valencia-cens dane,NaN,0
+2018-9-7,Sandra Carolina Lara Dane,0.007936507936507936,8

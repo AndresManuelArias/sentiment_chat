@@ -1,0 +1,14 @@
+.vscode/
+yarn.lock
+.jshintrc
+.git/
+node_modules/
+public/
+package-lock.json
+data_base/
+yarn-error.log
+esc
+report.20190809.033828.3253.0.001.json
+report.*.*.*.*.*.json
+.Rhistory
+base_data/

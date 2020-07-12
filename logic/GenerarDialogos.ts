@@ -12,10 +12,16 @@ interface EmocionPorDia {
 
 export class GenerarDialogos{
     private dialogoUsuarios:EmocionPorDia[]
-    constructor(dialogos:string,formatDAte:string,expresionSeparadorDialogoDate:any){       
-        let dialogoUsuarios:string[] = this.generarArrayDeDialogos(dialogos,expresionSeparadorDialogoDate)       
+    constructor(dialogos:string[],formatDAte:string,expresionSeparadorDialogoDate:any){              
+        let unionDialogo:string;
+        dialogos.forEach(dialogo => {
+            unionDialogo += dialogo;
+        });
+        let dialogoUsuarios:string[] = this.generarArrayDeDialogos(unionDialogo,expresionSeparadorDialogoDate)       
         
-        this.dialogoUsuarios = dialogoUsuarios.filter(this.quitarLosqueNotienenUsuario).map((dialogo,index) => this.descomponerDialogo(dialogo,formatDAte,index));
+        this.dialogoUsuarios = dialogoUsuarios
+            .filter(this.quitarLosqueNotienenUsuario)
+            .map((dialogo,index) => this.descomponerDialogo(dialogo,formatDAte,index));
     }
     private quitarLosqueNotienenUsuario(dialogo:string):boolean{
         var myRe = / - [\W\w][^:]+: /g;
@@ -28,10 +34,11 @@ export class GenerarDialogos{
         console.log('myArray',myArray);
         let descompuesto = dialogo.split(myArray[0]);
         let fecha = fechaFormat.parse(descompuesto[0],formatDAte);
-        console.log('descompuesto',descompuesto,fecha)
+        let usuario = myArray[0].substring(3,myArray[0].length-2)
+        console.log('descompuesto',descompuesto,fecha,usuario)
         let emocionPorDia:EmocionPorDia={
             fecha:fecha,
-            usuario:myArray[0],
+            usuario:usuario,
             dialogo:descompuesto[1],
             idSecuenciaDialogo:index,
             puntajeEmocion:''};
